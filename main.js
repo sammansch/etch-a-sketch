@@ -8,14 +8,22 @@ do{
     for (let i = 0; i < 16; i++){
         const box = document.createElement('div');
         box.className = "game-cell";
-        //box.style.backgroundColor = 'lightgray';
-        box.textContent = i+1;
+
         container.appendChild(box);
     }
     x++
-} while (x < 16)
+} while (x < 16);
 
+//cells change color as the cursor passes through 
+container.addEventListener('mouseover', function(event) {
+    event.target.style.backgroundColor = 'seagreen';
+});
 
-//3. Set up a “hover” effect so that the grid divs change color 
-//when your mouse passes over them, leaving a (pixelated) trail 
-//through your grid like a pen would.
+//add reset button at top of page
+const header = document.querySelector('.header');
+const resetBtn = document.createElement('button');
+resetBtn.className = "reset-grid";
+resetBtn.textContent = "Clear Grid";
+header.appendChild(resetBtn);
+
+resetBtn.addEventListener('click',() => location.reload());
