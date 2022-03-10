@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+.game-cell {
+  width: 150px;
+  height: 150px;
+}
